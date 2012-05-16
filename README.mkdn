@@ -5,25 +5,26 @@ A simple messaging queue using JSON built on NodeJS.
 ## What should it do?
 
 ### Producer
-	- Select a channel to use
-	- Push a message into the channel
+
+- Select a channel to use
+- Push a message into the channel
 
 ### Consumer
-	- Select a channel to use
-	- Poll a channel for changes
-	- Reserve a message in the queue
-		- This should return the message but leave it in the queue marked as "reserved"
-	- Delete a message in the queue
-	- Release a reserved message
-	- Pop a message
-		- This will return the message and immediately delete it
+- Select a channel to use
+- Poll a channel for changes
+- Reserve a message in the queue
+	- This should return the message but leave it in the queue marked as "reserved"
+- Delete a message in the queue
+- Release a reserved message
+- Pop a message
+	- This will return the message and immediately delete it
 	
 
 ### Queue Server
-	- Keep track of clients connected in a global list
-	- Create channel instances
-		- Each channel should store clients subscribed to it
-	- Parse commands sent to the server by consumers and producers
+- Keep track of clients connected in a global list
+- Create channel instances
+	- Each channel should store clients subscribed to it
+- Parse commands sent to the server by consumers and producers
 
 ## Available Commands
 
@@ -60,7 +61,7 @@ A simple messaging queue using JSON built on NodeJS.
 
 ```javascript 
 args: {
-	channel_name: string
+	channel_name: <string>
 }
 ```
 
@@ -69,7 +70,7 @@ args: {
 
 ```javascript
 args: {
-	msg: string
+	msg: <string>
 }
 ```
 
@@ -78,7 +79,7 @@ args: {
 
 ```javascript
 args: {
-	channel_name: string
+	channel_name: <string>
 }
 ```
 
@@ -87,7 +88,7 @@ args: {
 
 ```javascript
 args: {
-	channel_name: string
+	channel_name: <string>
 }
 ```
 
@@ -96,8 +97,8 @@ args: {
 
 ```javascript
 args: {
-	channel_name: string
-	msg_id: int
+	channel_name: <string>
+	msg_id: <int>
 }
 ```
 
@@ -106,7 +107,7 @@ args: {
 
 ```javascript
 args: {
-	channel_name: string
+	channel_name: <string>
 }
 ```
 
@@ -115,8 +116,8 @@ args: {
 
 ```javascript
 args: {
-	channel_name: string
-	msg_id: int
+	channel_name: <string>
+	msg_id: <int>
 }
 ```
 
@@ -125,7 +126,7 @@ args: {
 
 ```javascript
 args: {
-	channel_name: string
+	channel_name: <string>
 }
 ```
 
@@ -136,7 +137,7 @@ The channels arg is a list of channel names.
 
 ```javascript
 args: {
-	channels: [string, (..string)]
+	channels: [<string>, (..<string>)]
 }
 ```
 
@@ -152,7 +153,7 @@ args: {}
 
 ```javascript
 args: {
-	channel_name: string
+	channel_name: <string>
 }
 ```
 
@@ -161,7 +162,7 @@ args: {
 
 ```javascript
 args: {
-	channel_name: string
+	channel_name: <string>
 }
 ```
 
