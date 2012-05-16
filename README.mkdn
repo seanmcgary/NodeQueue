@@ -1,0 +1,170 @@
+# NodeQueue
+
+A simple messaging queue using JSON built on NodeJS.
+
+## What should it do?
+
+### Producer
+	- Select a channel to use
+	- Push a message into the channel
+
+### Consumer
+	- Select a channel to use
+	- Poll a channel for changes
+	- Reserve a message in the queue
+		- This should return the message but leave it in the queue marked as "reserved"
+	- Delete a message in the queue
+	- Release a reserved message
+	- Pop a message
+		- This will return the message and immediately delete it
+	
+
+### Queue Server
+	- Keep track of clients connected in a global list
+	- Create channel instances
+		- Each channel should store clients subscribed to it
+	- Parse commands sent to the server by consumers and producers
+
+## Available Commands
+
+- Producers
+	- use: select a channel for use
+	- push: push a message into the queue
+- Consumers
+	- watch: watch a channel
+	- ignore: ignore a channel currently being watched
+	- reserve: reserve a message in a channel
+	- pop: pop a message from a channel
+	- delete: delete a message from a channel
+	- peek: check to see if there is a message available in the channel
+- Generic Commands
+	- stat: get the stats of a channel
+	- server_stat: get stats of the server
+	- delete_channel: delete channel and unsubscribe all connected clients
+	- clear_channel: clear all messages from a channel
+
+## Protocol
+
+### Command Structure
+
+```javascript
+{
+	code: <int>,
+	args: {
+		<arg name>: <arg value>
+	}
+}
+```
+
+### use 
+
+```javascript 
+args: {
+	channel_name: string
+}
+```
+
+
+### push
+
+```javascript
+args: {
+	msg: string
+}
+```
+
+
+### watch
+
+```javascript
+args: {
+	channel_name: string
+}
+```
+
+
+### ignore
+
+```javascript
+args: {
+	channel_name: string
+}
+```
+
+
+### reserve
+
+```javascript
+args: {
+	channel_name: string
+	msg_id: int
+}
+```
+
+
+### pop
+
+```javascript
+args: {
+	channel_name: string
+}
+```
+
+
+### delete
+
+```javascript
+args: {
+	channel_name: string
+	msg_id: int
+}
+```
+
+
+### peek
+
+```javascript
+args: {
+	channel_name: string
+}
+```
+
+
+### stat
+
+The channels arg is a list of channel names.
+
+```javascript
+args: {
+	channels: [string, (..string)]
+}
+```
+
+
+### server_stat
+
+```javascript
+args: {}
+```
+
+
+### delete_channel
+
+```javascript
+args: {
+	channel_name: string
+}
+```
+
+
+### clear_channel
+
+```javascript
+args: {
+	channel_name: string
+}
+```
+
+
+
+
