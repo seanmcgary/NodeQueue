@@ -2,6 +2,8 @@
 
 A simple messaging queue using JSON built on NodeJS.
 
+
+[![Build Status](https://secure.travis-ci.org/seanmcgary/NodeQueue.png?branch=master)](http://travis-ci.org/seanmcgary/NodeQueue)
 ## What should it do?
 
 ### Producer
