@@ -4,4 +4,49 @@ This document describes the specific areas that are being tested and specific us
 
 #Use Cases
 
-i
+- Connect to server
+	- Successful:
+		- Correct response
+	- Failure:
+		- Correct response
+- Use a channel:
+	- Successful:
+		- Correct response
+		- Run server_stat to make sure the client is there
+- Push msg to channel
+	- Successful:
+		- Correct response
+		- Run channel_stat to check that the message is there
+- Pop msg from channel
+	- Successful:
+		- Correct response
+		- Correct message is returned
+		- Run channel_stat to make sure the message is no longer in the queue
+	- Failure:
+		- Correct response
+			- Channel doesnt exist
+- Reserve message in channel:
+	- Successful:
+		- Correct response
+		- Peek message to make sure its reserved
+	- Failure:
+		- Correct response
+			- Channel doesnt exist
+- Delete message:
+	- Success:
+		- Correct response
+		- Run channel stat to make sure message is deleted
+	- Failure:
+		- Correct response
+			- Message doesnt exist
+			- Channel doesnt exist
+- Watch channel:
+	- Success:
+		- Correct response
+		- Run channel_stat to check that client is in watch list
+	- Failure:
+- Ignore channel
+	- Success:
+		- Correct response
+		- Run channel_stat to check that client is removed
+
