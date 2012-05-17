@@ -33,7 +33,8 @@ NodeQueue can function as a typical messaging queue with producers pushing messa
 
 - Producers
 	- use: select a channel for use
-	- push: push a message into the queue
+	- push: push a message into the queue\
+	- broadcast: send a message to all watchers
 - Consumers
 	- watch: watch a channel
 	- ignore: ignore a channel currently being watched
@@ -43,6 +44,7 @@ NodeQueue can function as a typical messaging queue with producers pushing messa
 	- peek: check to see if there is a message available in the channel
 - Generic Commands
 	- stat: get the stats of a channel
+	- channel_queue: get the contents of the queue
 	- server_stat: get stats of the server
 	- delete_channel: delete channel and unsubscribe all connected clients
 	- clear_channel: clear all messages from a channel
@@ -83,6 +85,16 @@ args: {
 
 
 ### push
+
+```javascript
+args: {
+	channel_name: <string>,
+	msg: <string>
+}
+```
+
+
+### broadcast
 
 ```javascript
 args: {
@@ -155,6 +167,15 @@ The channels arg is a list of channel names.
 ```javascript
 args: {
 	channels: [<string>, (..<string>)]
+}
+```
+
+
+### channel_queue
+
+```javascript 
+args: {
+	channel_name: <string>
 }
 ```
 
