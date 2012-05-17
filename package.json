@@ -11,7 +11,7 @@
 		}
 	],
 	"scripts": {
-		"test": "vows --spec --isolate"
+		"test": "vows test/*"
 	},
 	"repository": {
 		"type": "git",
