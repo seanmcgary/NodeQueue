@@ -83,6 +83,7 @@ args: {
 
 ```javascript
 args: {
+	channel_name: <string>,
 	msg: <string>
 }
 ```
