@@ -21,7 +21,7 @@ exports.codes = {
 	"100": "ERR 100 Malformed JSON request",
 	"101": "ERR 101 Channel doesn't exist",
 	"102": "ERR Queue is empty",
-	"103": "ERR Message for msg_id not in queue"
+	"103": "ERR Message for msg_id not in queue",
 
 	// 2xx - success response
 	"200": "OK Subscribed to channel",
