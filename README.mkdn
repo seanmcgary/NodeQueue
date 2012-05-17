@@ -1,7 +1,8 @@
 # NodeQueue
 
-A simple messaging queue using JSON built on NodeJS.
+A messaging queue using JSON built on NodeJS. 
 
+NodeQueue can function as a typical messaging queue with producers pushing messages into channels and consumers polling the channels for changes, grabbing messages when available. NodeQueue can also work as a pub/sub messaging system. When a message is pushed into a channel, all consumers watching the channel will receive a the message. By pushing a message, the message remains in the queue. Producers can alternatively broadcast a message to the channel which will send the message to all watchers, but not place the message in the queue.
 
 [![Build Status](https://secure.travis-ci.org/seanmcgary/NodeQueue.png?branch=master)](http://travis-ci.org/seanmcgary/NodeQueue)
 ## What should it do?
