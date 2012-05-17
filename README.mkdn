@@ -48,11 +48,24 @@ A simple messaging queue using JSON built on NodeJS.
 
 ### Command Structure
 
+Request:
+
 ```javascript
 {
 	code: <int>,
 	args: {
 		<arg name>: <arg value>
+	}
+}
+```
+
+Response:
+```javascript
+{
+	code: <int>,
+	msg: <string>,
+	data: {
+		<data name>: <data value>
 	}
 }
 ```
